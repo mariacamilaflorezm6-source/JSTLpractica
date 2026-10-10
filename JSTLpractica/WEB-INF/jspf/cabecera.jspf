@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilo.css">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/img/2.png" type="image/x-icon">
+<title><c:out value="${titulo}"/> | Ejercicios</title>
+</head>
+<body>
+<nav class="barra">
+    <div class="barra-inner">
+        <a class="marca" href="${pageContext.request.contextPath}/index.jsp">
+            <span class="marca-icono"><i class="fab fa-java" style="font-size:1.1rem"></i></span>
+            <span class="marca-txt">Ejercicios<em>JSTL</em></span>
+        </a>
+        <a class="boton boton-sec boton-mini" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+    </div>
+</nav>

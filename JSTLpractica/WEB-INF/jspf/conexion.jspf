@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%
+    // Datos de conexion tomados de variables de entorno (se configuran en Railway).
+    // Si no existen, usa un PostgreSQL local para pruebas.
+    String dbHost = System.getenv("PGHOST")     != null ? System.getenv("PGHOST")     : "localhost";
+    String dbPort = System.getenv("PGPORT")     != null ? System.getenv("PGPORT")     : "5432";
+    String dbName = System.getenv("PGDATABASE") != null ? System.getenv("PGDATABASE") : "empleados";
+    String dbUser = System.getenv("PGUSER")     != null ? System.getenv("PGUSER")     : "postgres";
+    String dbPass = System.getenv("PGPASSWORD") != null ? System.getenv("PGPASSWORD") : "";
+    pageContext.setAttribute("dbUrl",  "jdbc:postgresql://" + dbHost + ":" + dbPort + "/" + dbName);
+    pageContext.setAttribute("dbUser", dbUser);
+    pageContext.setAttribute("dbPass", dbPass);
+%>
+<sql:setDataSource var="empleados"
+    driver="org.postgresql.Driver"
+    url="${dbUrl}"
+    user="${dbUser}"
+    password="${dbPass}" />
